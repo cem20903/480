@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import Login from "./Views/Login/Login";
 import Menu from "./Components/Menu/Menu";
-import Sidebar from "./Components/Sidebar/Sidebar";
-import Weather from "./Views/Weather/Weather";
+import { Route, Routes } from "react-router-dom";
+import Contact from "./Views/Contact/Contact";
+import Main from "./Views/Main/Main";
 
 function App() {
 	const [isLogued, setIsLogued] = useState(false);
@@ -12,11 +12,21 @@ function App() {
 	return (
 		<div>
 			<Menu isLogued={isLogued} />
-			<div className='container'>
-				{isLogued && <Sidebar />}
-				{!isLogued && <Login setIsLogued={setIsLogued} />}
-				{isLogued && <Weather />}
-			</div>
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<Main
+							isLogued={isLogued}
+							setIsLogued={setIsLogued}
+						/>
+					}
+				/>
+				<Route
+					path='contact'
+					element={<Contact />}
+				/>
+			</Routes>
 		</div>
 	);
 }
