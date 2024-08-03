@@ -1,9 +1,11 @@
 import React from "react";
 
+import "./menu.css";
+
 function Menu() {
 	return (
 		<header>
-			<div>
+			<div className='menu'>
 				<span>ES</span>
 				<span>EN</span>
 			</div>
