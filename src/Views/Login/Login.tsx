@@ -2,12 +2,17 @@ import React, { useRef } from "react";
 
 import "./login.css";
 
-function Login() {
+type LoginProps = {
+	setIsLogued: (boolean: boolean) => void;
+};
+
+function Login({ setIsLogued }: LoginProps) {
 	const email = useRef<HTMLInputElement>(null);
 	const password = useRef<HTMLInputElement>(null);
 
 	function onSendLogin(event: React.FormEvent) {
 		event.preventDefault();
+		setIsLogued(true);
 	}
 
 	return (
