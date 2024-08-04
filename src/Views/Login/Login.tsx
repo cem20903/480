@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import "./login.css";
 
@@ -14,6 +15,8 @@ function Login({ setIsLogued }: LoginProps) {
 		event.preventDefault();
 		setIsLogued(true);
 	}
+
+	const { t } = useTranslation();
 
 	return (
 		<div className='login'>
@@ -34,7 +37,7 @@ function Login({ setIsLogued }: LoginProps) {
 						placeholder='Introduzca su correo'
 						required
 					/>
-					<label htmlFor='password-field'>Password</label>
+					<label htmlFor='password-field'>{t("password")}</label>
 					<input
 						id='password-field'
 						type='password'
