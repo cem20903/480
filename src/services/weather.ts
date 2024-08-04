@@ -1,8 +1,8 @@
+import { WeatherList } from "../types"
 import { isToday, transformDateFromUnixTimestamp } from "../utils/dates"
 
-type Weather = [{ dt: number, dt_txt: string, weather: [{ icon: string }], main: { temp_max: number, temp_min: number, temp: number } }]
 
-function filterByDate(weatherList: Weather) {
+function filterByDate(weatherList: WeatherList) {
   const weatherListWithFormatedDate = weatherList.map(weatherItem => {
     const currentDate = transformDateFromUnixTimestamp(weatherItem.dt)
     return {
@@ -13,7 +13,7 @@ function filterByDate(weatherList: Weather) {
   return weatherListWithFormatedDate.filter(weatherItem => isToday(weatherItem.date))
 }
 
-function weatherListFormated(weatherList: Weather) {
+function weatherListFormated(weatherList: WeatherList) {
 
   const currentWeather = filterByDate(weatherList)
 

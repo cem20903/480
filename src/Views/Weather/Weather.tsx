@@ -2,19 +2,14 @@ import React, { useEffect, useState } from "react";
 import { getWeather } from "../../services/weather";
 
 import "./weather.css";
+import { WeatherListFormated } from "../../types";
 
-type Weather = [
-	{
-		date: string;
-		icon: string;
-		maxTemp: number;
-		minTemp: number;
-		currentTemp: number;
-	}
-];
+type WeatherProps = {
+	city: string;
+};
 
-function Weather({ city }: { city: string }) {
-	const [weatherList, setWeatherList] = useState<Weather>([
+function Weather({ city }: WeatherProps) {
+	const [weatherList, setWeatherList] = useState<WeatherListFormated>([
 		{ date: "", icon: "", maxTemp: 0, minTemp: 0, currentTemp: 0 },
 	]);
 
