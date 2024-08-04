@@ -11,7 +11,7 @@ const Contact = () => {
 	const city = useRef<HTMLInputElement>(null);
 	const phone = useRef<HTMLInputElement>(null);
 
-	const handleSubmit = (event: any) => {
+	const handleSubmit = (event: React.FormEvent) => {
 		event.preventDefault();
 
 		setMessage("Formulario enviado con exito");
