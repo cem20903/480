@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./sidebar.css";
+import { Link } from "react-router-dom";
 
 const CITIES = ["London", "Toronto", "Singapur"];
 
@@ -23,7 +24,7 @@ function Sidebar({ setCity }: SidebarProps) {
 					);
 				})}
 			</div>
-			<span>Contacto</span>
+			<Link to='/contact'>Contacto</Link>
 		</div>
 	);
 }

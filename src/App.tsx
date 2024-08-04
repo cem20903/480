@@ -11,7 +11,10 @@ function App() {
 
 	return (
 		<div>
-			<Menu isLogued={isLogued} />
+			<Menu
+				isLogued={isLogued}
+				setIsLogued={setIsLogued}
+			/>
 			<Routes>
 				<Route
 					path='/'

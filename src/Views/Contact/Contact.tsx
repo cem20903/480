@@ -1,15 +1,19 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./contact.css";
 
 const Contact = () => {
 	const [message, setMessage] = useState("");
 
-	const name = useRef<HTMLInputElement>(null);
-	const email = useRef<HTMLInputElement>(null);
-	const date = useRef<HTMLInputElement>(null);
-	const city = useRef<HTMLInputElement>(null);
-	const phone = useRef<HTMLInputElement>(null);
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		date: "",
+		city: "",
+		phone: "",
+	});
+
+	const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
 	const handleSubmit = (event: React.FormEvent) => {
 		event.preventDefault();
@@ -20,6 +24,17 @@ const Contact = () => {
 			setMessage("");
 		}, 3000);
 	};
+
+	function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+		const { name, value } = event.target;
+		setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+	}
+
+	useEffect(() => {
+		const { name, email, date, city, phone } = formData;
+
+		setIsButtonDisabled(!name || !email || !date || !city || !phone);
+	}, [formData]);
 
 	return (
 		<form
@@ -33,7 +48,8 @@ const Contact = () => {
 					type='text'
 					name='name'
 					aria-label='name'
-					ref={name}
+					value={formData.name}
+					onChange={handleChange}
 					placeholder='Introduzca su Nombre'
 					required
 					className='contact--input'
@@ -46,7 +62,7 @@ const Contact = () => {
 					type='email'
 					name='email'
 					aria-label='email'
-					ref={email}
+					onChange={handleChange}
 					placeholder='Introduzca su Correo'
 					className='contact--input'
 					required
@@ -59,7 +75,7 @@ const Contact = () => {
 					type='date'
 					name='date'
 					aria-label='date'
-					ref={date}
+					onChange={handleChange}
 					placeholder='Introduzca su Fecha de Nacimiento'
 					className='contact--input'
 					required
@@ -72,7 +88,7 @@ const Contact = () => {
 					type='text'
 					name='city'
 					aria-label='city'
-					ref={city}
+					onChange={handleChange}
 					placeholder='Introduzca su Ciudad'
 					className='contact--input'
 					required
@@ -85,14 +101,19 @@ const Contact = () => {
 					type='tel'
 					name='phone'
 					aria-label='phone'
-					ref={phone}
+					onChange={handleChange}
 					placeholder='Introduzca su Telefono'
 					className='contact--input'
 					minLength={9}
 					required
 				/>
 			</div>
-			<button type='submit'>Enviar</button>
+			<button
+				type='submit'
+				disabled={isButtonDisabled}
+			>
+				Enviar
+			</button>
 			{message && <p>{message}</p>}
 		</form>
 	);
