@@ -14,6 +14,9 @@ function Weather({ city }: WeatherProps) {
 	]);
 
 	useEffect(() => {
+		if (!city) {
+			return;
+		}
 		getWeather(city).then((response: any) => {
 			setWeatherList(response);
 		});
@@ -23,22 +26,23 @@ function Weather({ city }: WeatherProps) {
 		<div>
 			<h3>VISTA EL TIEMPO: {city}</h3>
 			<div className='weather-container'>
-				{weatherList.map((weatherByHour) => {
-					return (
-						<div className='weather-day'>
-							<div>{weatherByHour.date}</div>
-							<div>
-								<img
-									src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
-									alt='Weather Icon'
-								/>
+				{city &&
+					weatherList.map((weatherByHour) => {
+						return (
+							<div className='weather-day'>
+								<div>{weatherByHour.date}</div>
+								<div>
+									<img
+										src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
+										alt='Weather Icon'
+									/>
+								</div>
+								<div>Temperatura Maxima: {weatherByHour.maxTemp}</div>
+								<div>Temperatura Minima: {weatherByHour.minTemp}</div>
+								<div>Temperatura Actual: {weatherByHour.currentTemp}</div>
 							</div>
-							<div>Temperatura Maxima: {weatherByHour.maxTemp}</div>
-							<div>Temperatura Minima: {weatherByHour.minTemp}</div>
-							<div>Temperatura Actual: {weatherByHour.currentTemp}</div>
-						</div>
-					);
-				})}
+						);
+					})}
 			</div>
 		</div>
 	);
