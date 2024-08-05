@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "./contact.css";
+import GInput from "../../Components/GInput/GlInput";
+import GButton from "../../Components/GButton/GButton";
 
 const Contact = () => {
 	const [message, setMessage] = useState("");
@@ -42,9 +44,8 @@ const Contact = () => {
 			className='contact-form'
 		>
 			<div className='input--container'>
-				<label htmlFor='name-field'>Nombre</label>
-				<input
-					id='name-field'
+				<GInput
+					label='nombre'
 					type='text'
 					name='name'
 					aria-label='name'
@@ -52,68 +53,63 @@ const Contact = () => {
 					onChange={handleChange}
 					placeholder='Introduzca su Nombre'
 					required
-					className='contact--input'
 				/>
 			</div>
 			<div className='input--container'>
-				<label htmlFor='email-field'>Correo</label>
-				<input
-					id='email-field'
+				<GInput
+					label='Correo'
 					type='email'
 					name='email'
 					aria-label='email'
+					value={formData.email}
 					onChange={handleChange}
 					placeholder='Introduzca su Correo'
-					className='contact--input'
 					required
 				/>
 			</div>
 			<div className='input--container'>
-				<label htmlFor='date-field'>Fecha de nacimiento</label>
-				<input
-					id='date-field'
+				<GInput
+					label='Fecha de Nacimiento'
 					type='date'
 					name='date'
 					aria-label='date'
+					value={formData.date}
 					onChange={handleChange}
 					placeholder='Introduzca su Fecha de Nacimiento'
-					className='contact--input'
 					required
 				/>
 			</div>
 			<div className='input--container'>
-				<label htmlFor='city-field'>Ciudad</label>
-				<input
-					id='city-field'
+				<GInput
+					label='Ciudad'
 					type='text'
 					name='city'
 					aria-label='city'
+					value={formData.city}
 					onChange={handleChange}
 					placeholder='Introduzca su Ciudad'
-					className='contact--input'
 					required
 				/>
 			</div>
 			<div className='input--container'>
-				<label htmlFor='phone-field'>Telefono</label>
-				<input
-					id='phone-field'
+				<GInput
+					label='Telefono'
 					type='tel'
 					name='phone'
 					aria-label='phone'
+					value={formData.phone}
 					onChange={handleChange}
 					placeholder='Introduzca su Telefono'
-					className='contact--input'
 					minLength={9}
 					required
 				/>
 			</div>
-			<button
+			<GButton
 				type='submit'
 				disabled={isButtonDisabled}
 			>
 				Enviar
-			</button>
+			</GButton>
 			{message && <p>{message}</p>}
 		</form>
 	);
