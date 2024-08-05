@@ -1,29 +1,32 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { isLogued } from "../../store/userSlice";
+import { useDispatch } from "react-redux";
+import { setIsLogued } from "../../store/userSlice";
 
 import "./menu.css";
 import GButton from "../GButton/GButton";
 
-function Menu({
-	isLogued,
-	setIsLogued,
-}: {
-	isLogued: boolean;
-	setIsLogued: (boolean: boolean) => void;
-}) {
+function Menu() {
 	const { i18n } = useTranslation();
+	const isCurrentLogued = useSelector(isLogued);
 
 	function changeLanguage(lang: string) {
 		i18n.changeLanguage(lang);
 	}
 
+	const dispacth = useDispatch();
+
 	return (
 		<header>
 			<div className='menu'>
-				{isLogued && (
+				{isCurrentLogued && (
 					<GButton
 						type='button'
-						onClick={() => setIsLogued(false)}
+						onClick={() => {
+							dispacth(setIsLogued(false));
+						}}
 					>
 						Cerrar Sesion
 					</GButton>

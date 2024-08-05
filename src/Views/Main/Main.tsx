@@ -9,11 +9,18 @@ function Main() {
 	const isCurrentLogued = useSelector(isLogued);
 	const [city, setCity] = useState("");
 
+	if (isCurrentLogued) {
+		return (
+			<div className='container'>
+				<Sidebar setCity={setCity} />
+				<Weather city={city} />
+			</div>
+		);
+	}
+
 	return (
 		<div className='container'>
-			{isCurrentLogued && <Sidebar setCity={setCity} />}
-			{!isCurrentLogued && <Login />}
-			{isCurrentLogued && <Weather city={city} />}
+			<Login />
 		</div>
 	);
 }

@@ -14,7 +14,6 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setIsLogued: (state: any, action: PayloadAction<boolean>) => {
-      console.log(action.payload, 'ESTO DE AQUI')
       state.isLogued = action.payload
     },
   },
