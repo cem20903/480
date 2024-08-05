@@ -1,9 +1,26 @@
 .menu {
 	display: flex;
-	border: 1px solid black;
-	border-radius: 5px;
 	padding: 10px;
 	gap: 10px;
-	margin: 10px;
-	justify-content: end;
+	margin-bottom: 10px;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #406363;
+}
+
+.menu--title {
+	color: white;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.menu--flag {
+	width: 2rem;
+	height: auto;
+}
+
+.menu--buttons {
+	display: flex;
+	gap: 10px;
+	height: fit-content;
 }
