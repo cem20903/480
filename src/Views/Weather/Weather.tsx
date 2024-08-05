@@ -26,10 +26,18 @@ function Weather({ city }: WeatherProps) {
 		<div>
 			<h3>VISTA EL TIEMPO: {city}</h3>
 			<div className='weather-container'>
+				{!city && (
+					<div>
+						<span>Selecciona una ciudad para ver su clima</span>
+					</div>
+				)}
 				{city &&
-					weatherList.map((weatherByHour) => {
+					weatherList.map((weatherByHour, index) => {
 						return (
-							<div className='weather-day'>
+							<div
+								className='weather-day'
+								key={index}
+							>
 								<div>{weatherByHour.date}</div>
 								<div>
 									<img
