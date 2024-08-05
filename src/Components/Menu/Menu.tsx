@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import "./menu.css";
 
@@ -9,14 +10,20 @@ function Menu({
 	isLogued: boolean;
 	setIsLogued: (boolean: boolean) => void;
 }) {
+	const { i18n } = useTranslation();
+
+	function changeLanguage(lang: string) {
+		i18n.changeLanguage(lang);
+	}
+
 	return (
 		<header>
 			<div className='menu'>
 				{isLogued && (
 					<button onClick={() => setIsLogued(false)}>Cerrar Sesion</button>
 				)}
-				<span>ES</span>
-				<span>EN</span>
+				<button onClick={() => changeLanguage("es")}>ES</button>
+				<button onClick={() => changeLanguage("en")}>EN</button>
 			</div>
 		</header>
 	);
