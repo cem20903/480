@@ -3,6 +3,11 @@
 	gap: 20px;
 }
 
+.weather-view {
+	display: flex;
+	gap: 20px;
+}
+
 .weather-day {
 	display: flex;
 	flex-direction: column;

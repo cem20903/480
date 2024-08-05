@@ -24,33 +24,38 @@ function Weather({ city }: WeatherProps) {
 
 	return (
 		<div>
-			<h3>VISTA EL TIEMPO: {city}</h3>
 			<div className='weather-container'>
 				{!city && (
 					<div>
-						<span>Selecciona una ciudad para ver su clima</span>
+						<h2>Selecciona una ciudad para ver su clima</h2>
 					</div>
 				)}
-				{city &&
-					weatherList.map((weatherByHour, index) => {
-						return (
-							<div
-								className='weather-day'
-								key={index}
-							>
-								<div>{weatherByHour.date}</div>
-								<div>
-									<img
-										src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
-										alt='Weather Icon'
-									/>
-								</div>
-								<div>Temperatura Maxima: {weatherByHour.maxTemp}</div>
-								<div>Temperatura Minima: {weatherByHour.minTemp}</div>
-								<div>Temperatura Actual: {weatherByHour.currentTemp}</div>
-							</div>
-						);
-					})}
+				{city && (
+					<div>
+						<h3>Tiempo de {city}</h3>
+						<div className='weather-view'>
+							{weatherList.map((weatherByHour, index) => {
+								return (
+									<div
+										className='weather-day'
+										key={index}
+									>
+										<div>{weatherByHour.date}</div>
+										<div>
+											<img
+												src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
+												alt='Weather Icon'
+											/>
+										</div>
+										<div>Temperatura Maxima: {weatherByHour.maxTemp}</div>
+										<div>Temperatura Minima: {weatherByHour.minTemp}</div>
+										<div>Temperatura Actual: {weatherByHour.currentTemp}</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);

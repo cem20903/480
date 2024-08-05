@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { isLogued } from "../../store/userSlice";
 import { useDispatch } from "react-redux";
 import { setIsLogued } from "../../store/userSlice";
+import es from "../../assets/flags/es.png";
+import en from "../../assets/flags/en.png";
 
 import "./menu.css";
 import GButton from "../GButton/GButton";
@@ -21,28 +23,40 @@ function Menu() {
 	return (
 		<header>
 			<div className='menu'>
-				{isCurrentLogued && (
+				<span className='menu--title'>Prueba 480</span>
+				<div className='menu--buttons'>
+					{isCurrentLogued && (
+						<GButton
+							type='button'
+							mode='warning'
+							onClick={() => {
+								dispacth(setIsLogued(false));
+							}}
+						>
+							Cerrar Sesion
+						</GButton>
+					)}
 					<GButton
 						type='button'
-						onClick={() => {
-							dispacth(setIsLogued(false));
-						}}
+						onClick={() => changeLanguage("es")}
 					>
-						Cerrar Sesion
+						<img
+							src={es}
+							className='menu--flag'
+							alt='idioma español'
+						/>
 					</GButton>
-				)}
-				<GButton
-					type='button'
-					onClick={() => changeLanguage("es")}
-				>
-					ES
-				</GButton>
-				<GButton
-					type='button'
-					onClick={() => changeLanguage("en")}
-				>
-					EN
-				</GButton>
+					<GButton
+						type='button'
+						onClick={() => changeLanguage("en")}
+					>
+						<img
+							src={en}
+							className='menu--flag'
+							alt='idioma ingles'
+						/>
+					</GButton>
+				</div>
 			</div>
 		</header>
 	);
