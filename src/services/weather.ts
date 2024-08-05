@@ -39,7 +39,6 @@ function getWeather(city: string) {
   return fetch(`${URL}?q=${city}&appid=${process.env.REACT_APP_WEATHER_API}&mode=json`)
     .then((response) => response.json())
     .then((response) => {
-      console.log(response.list, 'ESTO DE AQUI')
       return weatherListFormated(response.list)
     });
 }

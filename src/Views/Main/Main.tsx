@@ -2,20 +2,18 @@ import React, { useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Login from "../Login/Login";
 import Weather from "../Weather/Weather";
+import { useSelector } from "react-redux";
+import { isLogued } from "../../store/userSlice";
 
-type MainProps = {
-	setIsLogued: (boolean: boolean) => void;
-	isLogued: boolean;
-};
-
-function Main({ isLogued, setIsLogued }: MainProps) {
+function Main() {
+	const isCurrentLogued = useSelector(isLogued);
 	const [city, setCity] = useState("");
 
 	return (
 		<div className='container'>
-			{isLogued && <Sidebar setCity={setCity} />}
-			{!isLogued && <Login setIsLogued={setIsLogued} />}
-			{isLogued && <Weather city={city} />}
+			{isCurrentLogued && <Sidebar setCity={setCity} />}
+			{!isCurrentLogued && <Login />}
+			{isCurrentLogued && <Weather city={city} />}
 		</div>
 	);
 }

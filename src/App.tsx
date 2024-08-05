@@ -18,12 +18,7 @@ function App() {
 			<Routes>
 				<Route
 					path='/'
-					element={
-						<Main
-							isLogued={isLogued}
-							setIsLogued={setIsLogued}
-						/>
-					}
+					element={<Main />}
 				/>
 				<Route
 					path='contact'

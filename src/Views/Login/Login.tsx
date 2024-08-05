@@ -1,20 +1,20 @@
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 
 import "./login.css";
 import GButton from "../../Components/GButton/GButton";
+import { setIsLogued } from "../../store/userSlice";
 
-type LoginProps = {
-	setIsLogued: (boolean: boolean) => void;
-};
-
-function Login({ setIsLogued }: LoginProps) {
+function Login() {
 	const email = useRef<HTMLInputElement>(null);
 	const password = useRef<HTMLInputElement>(null);
 
+	const dispacth = useDispatch();
+
 	function onSendLogin(event: React.FormEvent) {
 		event.preventDefault();
-		setIsLogued(true);
+		dispacth(setIsLogued(true));
 	}
 
 	const { t } = useTranslation();
