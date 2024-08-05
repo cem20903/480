@@ -3,6 +3,8 @@ import React from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
 
+import GButton from "../GButton/GButton";
+
 const CITIES = ["London", "Toronto", "Singapur"];
 
 type SidebarProps = {
@@ -12,15 +14,16 @@ type SidebarProps = {
 function Sidebar({ setCity }: SidebarProps) {
 	return (
 		<div className='sidebar'>
-			<div>
+			<div className='sidebar--cities'>
 				{CITIES.map((city) => {
 					return (
-						<button
+						<GButton
+							type='button'
 							key={city}
 							onClick={() => setCity(city)}
 						>
 							{city}
-						</button>
+						</GButton>
 					);
 				})}
 			</div>

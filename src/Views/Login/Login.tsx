@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import "./login.css";
+import GButton from "../../Components/GButton/GButton";
 
 type LoginProps = {
 	setIsLogued: (boolean: boolean) => void;
@@ -48,12 +49,7 @@ function Login({ setIsLogued }: LoginProps) {
 						ref={password}
 						required
 					/>
-					<button
-						className='login--button'
-						type='submit'
-					>
-						Log In
-					</button>
+					<GButton type='submit'>Log In</GButton>
 				</form>
 			</div>
 		</div>
