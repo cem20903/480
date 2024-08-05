@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import "./menu.css";
+import GButton from "../GButton/GButton";
 
 function Menu({
 	isLogued,
@@ -20,10 +21,25 @@ function Menu({
 		<header>
 			<div className='menu'>
 				{isLogued && (
-					<button onClick={() => setIsLogued(false)}>Cerrar Sesion</button>
+					<GButton
+						type='button'
+						onClick={() => setIsLogued(false)}
+					>
+						Cerrar Sesion
+					</GButton>
 				)}
-				<button onClick={() => changeLanguage("es")}>ES</button>
-				<button onClick={() => changeLanguage("en")}>EN</button>
+				<GButton
+					type='button'
+					onClick={() => changeLanguage("es")}
+				>
+					ES
+				</GButton>
+				<GButton
+					type='button'
+					onClick={() => changeLanguage("en")}
+				>
+					EN
+				</GButton>
 			</div>
 		</header>
 	);
