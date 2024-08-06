@@ -1,3 +1,12 @@
 .container {
 	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	gap: 20px;
+}
+
+@media (min-width: 1024px) {
+	.container {
+		flex-direction: row;
+	}
 }

@@ -29,7 +29,12 @@ function Sidebar({ setCity }: SidebarProps) {
 					);
 				})}
 			</div>
-			<Link to='/contact'>{t("contact")}</Link>
+			<Link
+				className='sidebar--link'
+				to='/contact'
+			>
+				{t("contact")}
+			</Link>
 		</div>
 	);
 }

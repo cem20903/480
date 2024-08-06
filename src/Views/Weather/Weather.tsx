@@ -32,7 +32,7 @@ function Weather({ city }: WeatherProps) {
 					</div>
 				)}
 				{city && (
-					<div>
+					<>
 						<h3>
 							{t("climateOf")} {city}
 						</h3>
@@ -64,7 +64,7 @@ function Weather({ city }: WeatherProps) {
 									);
 								})}
 						</div>
-					</div>
+					</>
 				)}
 			</div>
 		</div>
