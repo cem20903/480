@@ -27,7 +27,7 @@ function Login() {
 					onSubmit={onSendLogin}
 					className='login--form'
 				>
-					<label htmlFor='email-field'>Correo</label>
+					<label htmlFor='email-field'>Email</label>
 					<input
 						id='email-field'
 						type='text'
@@ -35,7 +35,7 @@ function Login() {
 						aria-label='email'
 						className='login--input'
 						ref={email}
-						placeholder='Introduzca su correo'
+						placeholder={t("enterEmail")}
 						required
 					/>
 					<label htmlFor='password-field'>{t("password")}</label>
@@ -45,7 +45,7 @@ function Login() {
 						name='password'
 						aria-label='password'
 						className='login--input'
-						placeholder='Introduzca su contraseña'
+						placeholder={t("enterPassword")}
 						ref={password}
 						required
 					/>

@@ -19,6 +19,7 @@ function Menu() {
 	}
 
 	const dispacth = useDispatch();
+	const { t } = useTranslation();
 
 	return (
 		<header>
@@ -33,7 +34,7 @@ function Menu() {
 								dispacth(setIsLogued(false));
 							}}
 						>
-							Cerrar Sesion
+							{t("closeSession")}
 						</GButton>
 					)}
 					<GButton

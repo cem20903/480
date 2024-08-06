@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getWeather } from "../../services/weather";
+import { useTranslation } from "react-i18next";
 
 import "./weather.css";
 import { WeatherListFormated } from "../../types";
@@ -12,6 +13,8 @@ function Weather({ city }: WeatherProps) {
 	const [weatherList, setWeatherList] = useState<WeatherListFormated>([
 		{ date: "", icon: "", maxTemp: 0, minTemp: 0, currentTemp: 0 },
 	]);
+
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		if (!city) {
@@ -27,12 +30,14 @@ function Weather({ city }: WeatherProps) {
 			<div className='weather-container'>
 				{!city && (
 					<div>
-						<h2>Selecciona una ciudad para ver su clima</h2>
+						<h2>{t("selectCity")}</h2>
 					</div>
 				)}
 				{city && (
 					<div>
-						<h3>Tiempo de {city}</h3>
+						<h3>
+							{t("climateOf")} {city}
+						</h3>
 						<div className='weather-view'>
 							{weatherList.map((weatherByHour, index) => {
 								return (
@@ -47,9 +52,15 @@ function Weather({ city }: WeatherProps) {
 												alt='Weather Icon'
 											/>
 										</div>
-										<div>Temperatura Maxima: {weatherByHour.maxTemp}</div>
-										<div>Temperatura Minima: {weatherByHour.minTemp}</div>
-										<div>Temperatura Actual: {weatherByHour.currentTemp}</div>
+										<div>
+											{t("tempMax")}: {weatherByHour.maxTemp}
+										</div>
+										<div>
+											{t("tempMin")}: {weatherByHour.minTemp}
+										</div>
+										<div>
+											{t("currentTemp")}: {weatherByHour.currentTemp}
+										</div>
 									</div>
 								);
 							})}

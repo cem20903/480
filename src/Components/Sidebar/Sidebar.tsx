@@ -1,9 +1,9 @@
 import React from "react";
-
-import "./sidebar.css";
 import { Link } from "react-router-dom";
 
 import GButton from "../GButton/GButton";
+import { useTranslation } from "react-i18next";
+import "./sidebar.css";
 
 const CITIES = ["London", "Toronto", "Singapur"];
 
@@ -12,6 +12,8 @@ type SidebarProps = {
 };
 
 function Sidebar({ setCity }: SidebarProps) {
+	const { t } = useTranslation();
+
 	return (
 		<div className='sidebar'>
 			<div className='sidebar--cities'>
@@ -27,7 +29,7 @@ function Sidebar({ setCity }: SidebarProps) {
 					);
 				})}
 			</div>
-			<Link to='/contact'>Contacto</Link>
+			<Link to='/contact'>{t("contact")}</Link>
 		</div>
 	);
 }

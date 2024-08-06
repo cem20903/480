@@ -24,10 +24,4 @@ export const { setIsLogued } = userSlice.actions;
 
 export const isLogued = (state: RootState) => state.user.isLogued;
 
-
-
-// export const selectPostList = (state: RootState) => state.post.postList;
-// export const selectNotifications = (state: RootState) => state.post.notifications;
-// export const selectIsLoading = (state: RootState) => state.post.isLoading;
-
 export default userSlice.reducer;
