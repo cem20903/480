@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./App.css";
 import Menu from "./Components/Menu/Menu";
@@ -7,8 +7,6 @@ import Contact from "./Views/Contact/Contact";
 import Main from "./Views/Main/Main";
 
 function App() {
-	const [isLogued, setIsLogued] = useState(false);
-
 	return (
 		<div>
 			<Menu />

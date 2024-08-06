@@ -3,9 +3,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from './index'
 
 
-type initialState = { isLogued: boolean }
+type InitialState = { isLogued: boolean }
 
-const initialState: initialState = {
+const initialState: InitialState = {
   isLogued: false,
 };
 

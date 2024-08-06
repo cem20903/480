@@ -1,4 +1,4 @@
-export default {
+const es = {
 	password: "Contraseña",
 	enterEmail: "Introduzca email",
 	enterPassword: "Introduzca Contraseña",
@@ -10,3 +10,5 @@ export default {
 	tempMin: "Minima",
 	currentTemp: "Actual",
 };
+
+export default es;
