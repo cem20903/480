@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 
-import "./login.css";
+import "./login.scss";
 import GButton from "../../Components/GButton/GButton";
 import { setIsLogued } from "../../store/userSlice";
 

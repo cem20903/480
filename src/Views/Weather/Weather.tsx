@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getWeather } from "../../services/weather/weather";
 import { useTranslation } from "react-i18next";
 
-import "./weather.css";
+import "./weather.scss";
 import { WeatherListFormated } from "../../types";
 
 type WeatherProps = {

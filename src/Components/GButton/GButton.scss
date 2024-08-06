@@ -1,0 +1,28 @@
+@import '../../assets/styles/_variables.scss';
+
+$primary-color: #FFFFFF;
+$warning-color: #ff4742;
+$primary-grey: #85888c;
+
+.button {
+	padding: 5px 15px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border-radius: $border-radius-m;
+	justify-content: center;
+}
+
+.button-primary {
+	border: 1px solid $primary-grey;
+	background: $primary-color;
+}
+
+.button-warning {
+	background-color: $warning-color;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	border: $border-primary-style;
+}

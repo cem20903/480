@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./GInput.css";
+import "./GInput.scss";
 
 type Props = {
 	value: string | number;
@@ -26,10 +26,9 @@ function GInput({
 	minLength,
 }: Props) {
 	return (
-		<label className='gInput'>
+		<label className='input--label'>
 			{label}
 			<input
-				className='gInput__input'
 				name={name}
 				aria-label={name}
 				value={value}

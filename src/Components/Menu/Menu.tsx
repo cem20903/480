@@ -7,7 +7,7 @@ import { setIsLogued } from "../../store/userSlice";
 import es from "../../assets/flags/es.png";
 import en from "../../assets/flags/en.png";
 
-import "./menu.css";
+import "./menu.scss";
 import GButton from "../GButton/GButton";
 
 function Menu() {

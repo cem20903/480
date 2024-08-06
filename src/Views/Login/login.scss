@@ -1,6 +1,4 @@
-:root {
-	--custom-border-radius: 5px;
-}
+@import '../../assets/styles/_variables.scss';
 
 .login {
 	display: flex;
@@ -26,8 +24,8 @@
 
 .login--input {
 	padding: 15px;
-	border: 1px solid black;
-	border-radius: var(--custom-border-radius);
+	border: $border-primary-style;
+	border-radius:  5px;
 	display: flex;
 	justify-content: center;
 	text-align: center;

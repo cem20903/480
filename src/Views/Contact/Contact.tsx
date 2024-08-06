@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "./contact.css";
+import "./contact.scss";
 import { useTranslation } from "react-i18next";
 import GInput from "../../Components/GInput/GlInput";
 import GButton from "../../Components/GButton/GButton";

@@ -1,0 +1,13 @@
+@import '../../assets/styles/_variables.scss';
+
+.input--label {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	
+	input {
+		padding: 10px;
+		border-radius: $border-radius-m;
+		border: $border-primary-style;
+	}
+}

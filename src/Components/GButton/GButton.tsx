@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./GButton.css";
+import "./GButton.scss";
 
 type Props = {
 	children: string | JSX.Element | JSX.Element[];

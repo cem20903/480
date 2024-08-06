@@ -5,6 +5,8 @@ import Weather from "../Weather/Weather";
 import { useSelector } from "react-redux";
 import { isLogued } from "../../store/userSlice";
 
+import "./main.scss";
+
 function Main() {
 	const isCurrentLogued = useSelector(isLogued);
 	const [city, setCity] = useState("");

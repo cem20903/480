@@ -1,5 +1,7 @@
+@import '../../assets/styles/_variables.scss';
+
 .weather-container {
-	margin-top: 10px;
+	margin: 10px;
 }
 
 .weather-view {
@@ -14,7 +16,7 @@
 	flex-direction: column;
 	gap: 10px;
 	align-items: center;
-	border: 1px solid black;
+	border: $border-primary-style;
 	border-radius: 10px;
 	padding: 10px;
 	width: initial;

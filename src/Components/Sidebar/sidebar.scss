@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables';
+
 .sidebar {
 	padding: 10px;
 	display: flex;
@@ -16,7 +18,7 @@
 .sidebar--link {
 	text-align: center;
 	text-decoration: none;
-	border: 1px solid black;
+	border: $border-primary-style;
 	padding: 5px;
 	border-radius: 5px;
 }

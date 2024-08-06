@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import GButton from "../GButton/GButton";
 import { useTranslation } from "react-i18next";
-import "./sidebar.css";
+import "./sidebar.scss";
 
 const CITIES = ["London", "Toronto", "Singapur"];
 

@@ -1,6 +1,3 @@
-import React from "react";
-
-import "./App.css";
 import Menu from "./Components/Menu/Menu";
 import { Route, Routes } from "react-router-dom";
 import Contact from "./Views/Contact/Contact";
