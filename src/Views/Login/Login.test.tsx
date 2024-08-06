@@ -20,7 +20,7 @@ describe("Login", () => {
 		fireEvent.click(submitButton);
 
 		const notificationText = screen.getByRole("heading", {
-			name: /Selecciona una ciudad para ver su clima/,
+			name: /Select a city to see its climate/,
 		});
 
 		expect(notificationText).toBeInTheDocument();

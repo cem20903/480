@@ -5,6 +5,8 @@ import userSlice from "../store/userSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { MemoryRouter } from "react-router-dom";
 
+import "../i18n";
+
 function renderWithProviders(
 	ui: React.ReactElement,
 	{

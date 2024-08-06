@@ -6,10 +6,12 @@ import renderWithProviders from "../../test/renderWithProviders";
 const fetchMock = jest.fn();
 global.fetch = fetchMock;
 
+const MILLISECONDS = 1000;
+
 const mockWeather = {
 	list: [
 		{
-			dt: new Date().getTime() / 1000,
+			dt: new Date().getTime() / MILLISECONDS,
 			dt_txt: "Fecha de Hoy",
 			weather: [{ icon: "string" }],
 			main: { temp_max: 456, temp_min: -999, temp: 1234 },
@@ -39,7 +41,7 @@ describe("Weather List", () => {
 		fireEvent.click(submitButton);
 
 		expect(
-			await screen.findByText(/Selecciona una ciudad para ver su clima/i)
+			await screen.findByText(/Select a city to see its climate/i)
 		).toBeInTheDocument();
 	});
 
