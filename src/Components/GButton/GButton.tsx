@@ -7,7 +7,7 @@ type Props = {
 	onClick?: () => void;
 	type: "submit" | "button";
 	disabled?: boolean;
-	mode?: string;
+	mode?: "primary" | "warning";
 };
 
 function GButton({
@@ -22,7 +22,7 @@ function GButton({
 			onClick={onClick}
 			type={type}
 			disabled={disabled}
-			className={`button-${mode} button`}
+			className={`button button-${mode}`}
 		>
 			{children}
 		</button>

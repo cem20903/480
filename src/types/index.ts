@@ -4,15 +4,13 @@ type WeatherList = [
 ]
 
 
-type WeatherListFormated = [
-  {
-    date: string;
-    icon: string;
-    maxTemp: number;
-    minTemp: number;
-    currentTemp: number;
-  }
-];
+type WeatherListFormated = {
+  date: string;
+  icon: string;
+  maxTemp: number;
+  minTemp: number;
+  currentTemp: number;
+}[];
 
 
 

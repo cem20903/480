@@ -13,11 +13,12 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setIsLogued: (state: any, action: PayloadAction<boolean>) => {
+    setIsLogued: (state, action: PayloadAction<boolean>) => {
       state.isLogued = action.payload
     },
   },
 });
+
 
 
 export const { setIsLogued } = userSlice.actions;

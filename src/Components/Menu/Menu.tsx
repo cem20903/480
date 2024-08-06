@@ -14,7 +14,7 @@ function Menu() {
 	const { i18n } = useTranslation();
 	const isCurrentLogued = useSelector(isLogued);
 
-	function changeLanguage(lang: string) {
+	function changeLanguage(lang: "es" | "en") {
 		i18n.changeLanguage(lang);
 	}
 

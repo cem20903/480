@@ -10,9 +10,7 @@ type WeatherProps = {
 };
 
 function Weather({ city }: WeatherProps) {
-	const [weatherList, setWeatherList] = useState<WeatherListFormated>([
-		{ date: "", icon: "", maxTemp: 0, minTemp: 0, currentTemp: 0 },
-	]);
+	const [weatherList, setWeatherList] = useState<WeatherListFormated | []>([]);
 
 	const { t } = useTranslation();
 
@@ -20,7 +18,7 @@ function Weather({ city }: WeatherProps) {
 		if (!city) {
 			return;
 		}
-		getWeather(city).then((response: any) => {
+		getWeather(city).then((response: WeatherListFormated) => {
 			setWeatherList(response);
 		});
 	}, [city]);
@@ -39,31 +37,32 @@ function Weather({ city }: WeatherProps) {
 							{t("climateOf")} {city}
 						</h3>
 						<div className='weather-view'>
-							{weatherList.map((weatherByHour, index) => {
-								return (
-									<div
-										className='weather-day'
-										key={index}
-									>
-										<div>{weatherByHour.date}</div>
-										<div>
-											<img
-												src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
-												alt='Weather Icon'
-											/>
+							{weatherList.length > 0 &&
+								weatherList.map((weatherByHour, index) => {
+									return (
+										<div
+											className='weather-day'
+											key={index}
+										>
+											<div>{weatherByHour.date}</div>
+											<div>
+												<img
+													src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
+													alt='Weather Icon'
+												/>
+											</div>
+											<div>
+												{t("tempMax")}: {weatherByHour.maxTemp}
+											</div>
+											<div>
+												{t("tempMin")}: {weatherByHour.minTemp}
+											</div>
+											<div>
+												{t("currentTemp")}: {weatherByHour.currentTemp}
+											</div>
 										</div>
-										<div>
-											{t("tempMax")}: {weatherByHour.maxTemp}
-										</div>
-										<div>
-											{t("tempMin")}: {weatherByHour.minTemp}
-										</div>
-										<div>
-											{t("currentTemp")}: {weatherByHour.currentTemp}
-										</div>
-									</div>
-								);
-							})}
+									);
+								})}
 						</div>
 					</div>
 				)}
