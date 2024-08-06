@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getWeather } from "../../services/weather";
+import { getWeather } from "../../services/weather/weather";
 import { useTranslation } from "react-i18next";
 
 import "./weather.css";

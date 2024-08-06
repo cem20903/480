@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./contact.css";
+import { useTranslation } from "react-i18next";
 import GInput from "../../Components/GInput/GlInput";
 import GButton from "../../Components/GButton/GButton";
 
@@ -16,11 +17,12 @@ const Contact = () => {
 	});
 
 	const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+	const { t } = useTranslation();
 
 	const handleSubmit = (event: React.FormEvent) => {
 		event.preventDefault();
 
-		setMessage("Formulario enviado con exito");
+		setMessage(t("formSendSuccess"));
 
 		setTimeout(() => {
 			setMessage("");
@@ -44,11 +46,11 @@ const Contact = () => {
 				onSubmit={handleSubmit}
 				className='contact-form'
 			>
-				<h3>Formulario de contacto</h3>
+				<h3>{t("contactForm")}</h3>
 				<div className='contact--group'>
 					<div className='input--container'>
 						<GInput
-							label='nombre'
+							label={t("name")}
 							type='text'
 							name='name'
 							aria-label='name'
@@ -60,7 +62,7 @@ const Contact = () => {
 					</div>
 					<div className='input--container'>
 						<GInput
-							label='Correo'
+							label={t("email")}
 							type='email'
 							name='email'
 							aria-label='email'
@@ -73,7 +75,7 @@ const Contact = () => {
 				</div>
 				<div className='input--container'>
 					<GInput
-						label='Fecha de Nacimiento'
+						label={t("dateBirthday")}
 						type='date'
 						name='date'
 						aria-label='date'
@@ -86,7 +88,7 @@ const Contact = () => {
 				<div className='contact--group'>
 					<div className='input--container'>
 						<GInput
-							label='Ciudad'
+							label={t("city")}
 							type='text'
 							name='city'
 							aria-label='city'
@@ -98,7 +100,7 @@ const Contact = () => {
 					</div>
 					<div className='input--container'>
 						<GInput
-							label='Telefono'
+							label={t("phone")}
 							type='tel'
 							name='phone'
 							aria-label='phone'
@@ -115,7 +117,7 @@ const Contact = () => {
 					type='submit'
 					disabled={isButtonDisabled}
 				>
-					Enviar
+					{t("send")}
 				</GButton>
 
 				{message && <p>{message}</p>}

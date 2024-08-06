@@ -1,6 +1,5 @@
-import { WeatherList } from "../types"
-import { isToday, transformDateFromUnixTimestamp } from "../utils/dates"
-
+import { isToday, transformDateFromUnixTimestamp } from "../../../utils/dates"
+import { WeatherList } from "../../../types"
 
 function filterByDate(weatherList: WeatherList) {
   const weatherListWithFormatedDate = weatherList.map(weatherItem => {
@@ -13,7 +12,7 @@ function filterByDate(weatherList: WeatherList) {
   return weatherListWithFormatedDate.filter(weatherItem => isToday(weatherItem.date))
 }
 
-function weatherListFormated(weatherList: WeatherList) {
+function formatWeatherList(weatherList: WeatherList) {
 
   const currentWeather = filterByDate(weatherList)
 
@@ -33,15 +32,4 @@ function weatherListFormated(weatherList: WeatherList) {
 }
 
 
-const URL = 'https://api.openweathermap.org/data/2.5/forecast'
-
-function getWeather(city: string) {
-  return fetch(`${URL}?q=${city}&appid=${process.env.REACT_APP_WEATHER_API}&mode=json`)
-    .then((response) => response.json())
-    .then((response) => {
-      return weatherListFormated(response.list)
-    });
-}
-
-
-export { getWeather }
+export default formatWeatherList

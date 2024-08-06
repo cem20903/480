@@ -9,6 +9,14 @@ const en = {
 	tempMax: "Maxima",
 	tempMin: "Minimum",
 	currentTemp: "Current",
+	contactForm: "Contact Form",
+	send: "Send",
+	formSendSuccess: "Form sent successfully",
+	name: "Name",
+	email: "Email",
+	dateBirthday: "Birthdate",
+	city: "City",
+	phone: "Phone",
 };
 
 export default en;

@@ -9,6 +9,9 @@ const es = {
 	tempMax: "Maxima",
 	tempMin: "Minima",
 	currentTemp: "Actual",
+	contactForm: "Formulario de Contacto",
+	send: "Enviar",
+	formSendSuccess: "Formulario enviado con exito",
 };
 
 export default es;
