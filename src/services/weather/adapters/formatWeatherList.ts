@@ -16,15 +16,14 @@ function formatWeatherList(weatherList: WeatherList) {
 
   const currentWeather = filterByDate(weatherList)
 
-
   const currentWeatherFormted = currentWeather.map(weather => {
-
     return {
       date: weather.dt_txt,
       icon: weather.weather[0].icon,
       maxTemp: weather.main.temp_max,
       minTemp: weather.main.temp_min,
-      currentTemp: weather.main.temp
+      currentTemp: weather.main.temp,
+      description: weather.weather[0].description
     }
   })
 

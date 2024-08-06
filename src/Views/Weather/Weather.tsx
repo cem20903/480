@@ -12,16 +12,16 @@ type WeatherProps = {
 function Weather({ city }: WeatherProps) {
 	const [weatherList, setWeatherList] = useState<WeatherListFormated | []>([]);
 
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 
 	useEffect(() => {
 		if (!city) {
 			return;
 		}
-		getWeather(city).then((response: WeatherListFormated) => {
+		getWeather(city, i18n.language).then((response: WeatherListFormated) => {
 			setWeatherList(response);
 		});
-	}, [city]);
+	}, [city, i18n.language]);
 
 	return (
 		<div>
@@ -50,6 +50,9 @@ function Weather({ city }: WeatherProps) {
 													src={`http://openweathermap.org/img/wn/${weatherByHour.icon}.png`}
 													alt='Weather Icon'
 												/>
+											</div>
+											<div>
+												{t("description")}: {weatherByHour.description}
 											</div>
 											<div>
 												{t("tempMax")}: {weatherByHour.maxTemp}

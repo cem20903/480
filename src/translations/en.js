@@ -17,6 +17,7 @@ const en = {
 	dateBirthday: "Birthdate",
 	city: "City",
 	phone: "Phone",
+	description: "Description",
 };
 
 export default en;

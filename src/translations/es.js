@@ -12,6 +12,7 @@ const es = {
 	contactForm: "Formulario de Contacto",
 	send: "Enviar",
 	formSendSuccess: "Formulario enviado con exito",
+	description: "Descripción",
 };
 
 export default es;

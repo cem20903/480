@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
 import { RootState } from './index'
-
 
 type InitialState = { isLogued: boolean }
 
@@ -19,10 +17,6 @@ export const userSlice = createSlice({
   },
 });
 
-
-
 export const { setIsLogued } = userSlice.actions;
-
 export const isLogued = (state: RootState) => state.user.isLogued;
-
 export default userSlice.reducer;
