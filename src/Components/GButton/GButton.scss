@@ -14,12 +14,12 @@ $primary-grey: #85888c;
 	justify-content: center;
 }
 
-.button-primary {
+.button--primary {
 	border: 1px solid $primary-grey;
 	background: $primary-color;
 }
 
-.button-warning {
+.button--warning {
 	background-color: $warning-color;
 	color: white;
 	font-weight: bold;

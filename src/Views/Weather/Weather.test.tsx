@@ -13,7 +13,7 @@ const mockWeather = {
 		{
 			dt: new Date().getTime() / MILLISECONDS,
 			dt_txt: "Fecha de Hoy",
-			weather: [{ icon: "string" }],
+			weather: [{ icon: "string", description: "Nuboso" }],
 			main: { temp_max: 456, temp_min: -999, temp: 1234 },
 		},
 	],
@@ -76,5 +76,6 @@ describe("Weather List", () => {
 		expect(await screen.findByText(/456/i)).toBeInTheDocument();
 		expect(await screen.findByText(/-999/i)).toBeInTheDocument();
 		expect(await screen.findByText(/1234/i)).toBeInTheDocument();
+		expect(await screen.findByText(/Nuboso/i)).toBeInTheDocument();
 	});
 });

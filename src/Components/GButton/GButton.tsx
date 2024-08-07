@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./GButton.scss";
 
 type Props = {
@@ -22,7 +20,7 @@ function GButton({
 			onClick={onClick}
 			type={type}
 			disabled={disabled}
-			className={`button button-${mode}`}
+			className={`button button--${mode}`}
 		>
 			{children}
 		</button>

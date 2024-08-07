@@ -7,7 +7,7 @@ import GButton from "../../Components/GButton/GButton";
 
 const TIME_HIDE_SEND_MESSAGE = 3000;
 
-const Contact = () => {
+function Contact() {
 	const [message, setMessage] = useState("");
 
 	const [formData, setFormData] = useState({
@@ -126,6 +126,6 @@ const Contact = () => {
 			</form>
 		</div>
 	);
-};
+}
 
 export default Contact;
