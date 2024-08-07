@@ -18,6 +18,11 @@ const en = {
 	city: "City",
 	phone: "Phone",
 	description: "Description",
+	placeholderName: "Enter your name",
+	placeholderEmail: "Enter your email",
+	placeholderBirthday: "Enter your birthday",
+	placeholderCity: "Enter your city",
+	placeholderPhone: "Enter your phone number",
 };
 
 export default en;

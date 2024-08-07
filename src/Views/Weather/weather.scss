@@ -1,36 +1,59 @@
 @import '../../assets/styles/_variables.scss';
 
-.weather-container {
+.weather--container {
 	margin: 10px;
 }
 
-.weather-view {
+.weather--view {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 50px;
 	margin-top: 10px;
 }
 
-.weather-day {
+.weather--day {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	align-items: center;
-	border: $border-primary-style;
 	border-radius: 10px;
 	padding: 10px;
 	width: initial;
-	background: darkgrey;
+	color: white;
+	font-size: 24px;
+	background: #406363;
+	-webkit-box-shadow: -7px 3px 40px 2px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: -7px 3px 40px 2px rgba(0, 0, 0, 0.35);
+	box-shadow: -7px 3px 40px 2px rgba(0, 0, 0, 0.35);
 }
 
+.weather--current {
+	border: 2px solid white;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 24px;
+	color: white;
+}
+
+.weahter--title {
+	font-size: .5em;
+}
+
+.weather--temp {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+
 @media (min-width: 1024px) {
-	.weather-container {
+	.weather--container {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
 	}
 
-	.weather-view {
+	.weather--view {
 		flex-direction: row;
 	}
 }

@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import GInput from "../../Components/GInput/GlInput";
 import GButton from "../../Components/GButton/GButton";
 
+const TIME_HIDE_SEND_MESSAGE = 3000;
+
 const Contact = () => {
 	const [message, setMessage] = useState("");
 
@@ -26,7 +28,7 @@ const Contact = () => {
 
 		setTimeout(() => {
 			setMessage("");
-		}, 3000);
+		}, TIME_HIDE_SEND_MESSAGE);
 	};
 
 	function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -44,7 +46,7 @@ const Contact = () => {
 		<div className='contact'>
 			<form
 				onSubmit={handleSubmit}
-				className='contact-form'
+				className='contact--form'
 			>
 				<h3>{t("contactForm")}</h3>
 				<div className='contact--group'>
@@ -56,7 +58,7 @@ const Contact = () => {
 							aria-label='name'
 							value={formData.name}
 							onChange={handleChange}
-							placeholder='Introduzca su Nombre'
+							placeholder={t("placeholderName")}
 							required
 						/>
 					</div>
@@ -68,7 +70,7 @@ const Contact = () => {
 							aria-label='email'
 							value={formData.email}
 							onChange={handleChange}
-							placeholder='Introduzca su Correo'
+							placeholder={t("placeholderEmail")}
 							required
 						/>
 					</div>
@@ -81,7 +83,7 @@ const Contact = () => {
 						aria-label='date'
 						value={formData.date}
 						onChange={handleChange}
-						placeholder='Introduzca su Fecha de Nacimiento'
+						placeholder={t("placeholderBirthday")}
 						required
 					/>
 				</div>
@@ -94,7 +96,7 @@ const Contact = () => {
 							aria-label='city'
 							value={formData.city}
 							onChange={handleChange}
-							placeholder='Introduzca su Ciudad'
+							placeholder={t("placeholderCity")}
 							required
 						/>
 					</div>
@@ -106,7 +108,7 @@ const Contact = () => {
 							aria-label='phone'
 							value={formData.phone}
 							onChange={handleChange}
-							placeholder='Introduzca su Telefono'
+							placeholder={t("placeholderPhone")}
 							minLength={9}
 							required
 						/>
@@ -120,7 +122,7 @@ const Contact = () => {
 					{t("send")}
 				</GButton>
 
-				{message && <p>{message}</p>}
+				{message && <p className='contact--message'>{message}</p>}
 			</form>
 		</div>
 	);

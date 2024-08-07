@@ -70,7 +70,7 @@ describe("Weather List", () => {
 		fireEvent.click(buttonCity);
 
 		expect(fetch).toHaveBeenCalledWith(
-			"https://api.openweathermap.org/data/2.5/forecast?q=Toronto&appid=1234&mode=json&lang=en"
+			"https://api.openweathermap.org/data/2.5/forecast?q=Toronto&appid=1234&mode=json&lang=en&units=metric"
 		);
 
 		expect(await screen.findByText(/456/i)).toBeInTheDocument();

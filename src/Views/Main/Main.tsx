@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Login from "../Login/Login";
 import Weather from "../Weather/Weather";

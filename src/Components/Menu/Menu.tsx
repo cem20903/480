@@ -1,20 +1,18 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { isLogued } from "../../store/userSlice";
+import { isLogued, setIsLogued } from "../../store/userSlice";
 import { useDispatch } from "react-redux";
-import { setIsLogued } from "../../store/userSlice";
 import es from "../../assets/flags/es.png";
 import en from "../../assets/flags/en.png";
-
 import "./menu.scss";
 import GButton from "../GButton/GButton";
+import { language } from "../../types";
 
 function Menu() {
 	const { i18n } = useTranslation();
 	const isCurrentLogued = useSelector(isLogued);
 
-	function changeLanguage(lang: "es" | "en") {
+	function changeLanguage(lang: language) {
 		i18n.changeLanguage(lang);
 	}
 

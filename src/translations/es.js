@@ -12,7 +12,17 @@ const es = {
 	contactForm: "Formulario de Contacto",
 	send: "Enviar",
 	formSendSuccess: "Formulario enviado con exito",
+	name: "Name",
+	email: "Email",
+	dateBirthday: "Birthdate",
+	city: "City",
+	phone: "Phone",
 	description: "Descripción",
+	placeholderName: "Introduzca su Nombre",
+	placeholderEmail: "Introduzca su Correo",
+	placeholderBirthday: "Introduzca fecha de nacimiento",
+	placeholderCity: "Introduzca su Ciudad",
+	placeholderPhone: "Introduzca su Telefono",
 };
 
 export default es;

@@ -1,8 +1,11 @@
-
 type WeatherList = [
-  { dt: number, dt_txt: string, weather: [{ icon: string, description: string }], main: { temp_max: number, temp_min: number, temp: number } }
-]
-
+  {
+    dt: number;
+    dt_txt: string;
+    weather: [{ icon: string; description: string }];
+    main: { temp_max: number; temp_min: number; temp: number };
+  }
+];
 
 type WeatherListFormated = {
   date: string;
@@ -10,9 +13,9 @@ type WeatherListFormated = {
   maxTemp: number;
   minTemp: number;
   currentTemp: number;
-  description: string
+  description: string;
 }[];
 
+type language = "es" | "en";
 
-
-export type { WeatherList, WeatherListFormated }
+export type { WeatherList, WeatherListFormated, language };
