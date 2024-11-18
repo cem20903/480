@@ -19,7 +19,7 @@ npm run test
 
 # Sobre la prueba tecnica:
 
-- Los requisitos de la misma estan en el pdf adjunto.
+- Los requisitos de la misma estan en el PDF adjunto.
 
 - Sobre el no uso de alias. Creia recordar que simplemente era añadir una configuracion en el tsconfig pero mas tarde leí este articulo: https://blog.logrocket.com/using-path-aliases-cleaner-react-typescript-imports/
 
